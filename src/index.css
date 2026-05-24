@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #07101f;
   --glass: rgba(255, 255, 255, 0.065);
@@ -19,14 +23,13 @@
 }
 
 html, body, #root {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  overflow: hidden;
 }
 
 /* ─── Background — Aurora (Aceternity-style) ─── */
@@ -208,45 +211,22 @@ body {
 /* ─── Main ────────────────────────────────────── */
 .app {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .main {
   position: relative;
   z-index: 1;
-  height: 100vh;
-  overflow-y: auto;
-  padding: 96px 40px 40px;
+  padding: 0 40px;
 }
 
-/* Animated wrapper — one per section swap */
-.section-anim {
-  min-height: calc(100vh - 136px);
+/* One section per viewport — scrolls naturally as a long page */
+.page-section {
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  animation: slideUp 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* Scrolling forward (down) — content rises up from below */
-.section-anim[data-dir="1"] {
-  animation: slideUp 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* Scrolling backward (up) — content drops down from above */
-.section-anim[data-dir="-1"] {
-  animation: slideDown 0.52s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(70px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-70px); }
-  to   { opacity: 1; transform: translateY(0); }
+  align-items: center;
+  padding: 100px 0 60px;
+  scroll-margin-top: 80px;
 }
 
 /* Each section component's root */
@@ -830,11 +810,11 @@ h1.hero-title {
   .nav-item   { display: none; }
 
   /* ── Main / section wrapper ── */
-  .main { padding: 72px 18px 80px; } /* 80px bottom clears fixed footer + breathing room */
-  .section-anim {
-    min-height: unset;        /* don't force full-height centering on mobile */
-    padding: 12px 0 8px;
-    justify-content: flex-start;
+  .main { padding: 0 18px; }
+  .page-section {
+    min-height: 100svh;
+    padding: 80px 0 60px;
+    align-items: flex-start;
   }
 
   /* ── Hero ── */

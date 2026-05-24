@@ -1,7 +1,12 @@
 import { useState } from 'react'
 
-// Replace with your actual Google Form URL
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform'
+const FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSefCMAIrV6HmqaakhjS2xJ28nKEj7Oxavt05nuFI36PaRxJBQ/formResponse'
+
+const INTEREST_MAP = {
+  voice: 'Voice Agent (Calls)',
+  messaging: 'Messaging Agent',
+  both: 'Both',
+}
 
 export default function DemoModal({ onClose }) {
   const [form, setForm] = useState({ name: '', phone: '', company: '', email: '', interest: '' })
@@ -11,7 +16,13 @@ export default function DemoModal({ onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    window.open(GOOGLE_FORM_URL, '_blank')
+    const data = new FormData()
+    data.append('entry.763987424', form.name)
+    data.append('entry.657435580', form.phone)
+    data.append('entry.249909161', form.company)
+    data.append('entry.1872206985', form.email)
+    data.append('entry.1031086616', INTEREST_MAP[form.interest] || form.interest)
+    fetch(FORM_ACTION, { method: 'POST', mode: 'no-cors', body: data })
     setSubmitted(true)
   }
 
@@ -38,7 +49,6 @@ export default function DemoModal({ onClose }) {
               See KITALK in action. We'll walk you through a live demo tailored to your business.
             </p>
 
-            {/* Required */}
             <div className="form-row">
               <label className="form-label">Full Name <span style={{ color: 'rgba(255,100,100,0.8)' }}>*</span></label>
               <input className="form-input" placeholder="Ahmad bin Razak" value={form.name} onChange={set('name')} required />
@@ -49,7 +59,6 @@ export default function DemoModal({ onClose }) {
               <input className="form-input" placeholder="+60 12-345 6789" value={form.phone} onChange={set('phone')} required />
             </div>
 
-            {/* Optional */}
             <div className="form-row">
               <label className="form-label">Company <span style={{ color: 'var(--text-3)', fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>— optional</span></label>
               <input className="form-input" placeholder="Your company name" value={form.company} onChange={set('company')} />

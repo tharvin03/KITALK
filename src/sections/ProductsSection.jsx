@@ -1,43 +1,63 @@
 export default function ProductsSection({ onNav }) {
   return (
     <div className="section center">
-      <div className="products-title" style={{ fontSize: 'clamp(48px, 7vw, 88px)', fontWeight: 800, letterSpacing: '-0.035em', color: '#fff', marginBottom: 48 }}>
-        Our Products
+      <div className="tag">What We Offer</div>
+      <div className="products-title" style={{ fontSize: 'clamp(48px, 7vw, 88px)', fontWeight: 800, letterSpacing: '-0.035em', color: '#fff', marginBottom: 16 }}>
+        Voice Agent
       </div>
+      <p style={{ fontSize: 16, color: 'var(--text-2)', lineHeight: 1.6, maxWidth: 560, margin: '0 auto 40px' }}>
+        Your AI-powered phone agent that handles inbound and outbound calls — so you never miss a customer again.
+      </p>
 
-      <div className="two-col" style={{ maxWidth: 780, margin: '0 auto' }}>
-        <div
-          className="card product-card"
-          style={{ padding: '40px 36px', cursor: 'pointer', textAlign: 'left' }}
-          onClick={() => onNav('usecases')}
-        >
-          <div style={{ fontSize: 22, fontWeight: 700, marginBottom: 6 }}>Voice Agent</div>
-          <div style={{ fontSize: 13, fontWeight: 600, color: 'rgba(110,160,255,0.85)', letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 18 }}>
-            Inbound &amp; Outbound Calls
+      <div style={{ maxWidth: 680, margin: '0 auto' }}>
+        {/* Capabilities */}
+        <div className="card" style={{ padding: '36px 32px', textAlign: 'left', marginBottom: 16 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(110,160,255,0.85)', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 22 }}>
+            What It Can Do
           </div>
-          <ul className="feat-list">
-            <li className="feat-item"><span className="feat-dot" />Make calls to deliver updates, reminders, or collect information from customers</li>
-            <li className="feat-item"><span className="feat-dot" />Answer incoming calls, respond to questions, and take action — automatically</li>
-            <li className="feat-item"><span className="feat-dot" />Handles full conversations end-to-end, 24/7, without a human agent</li>
-          </ul>
-          <div className="product-arrow">See use cases →</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            {[
+              { icon: '📞', text: 'Deliver updates, reminders & collect information from customers' },
+              { icon: '📥', text: 'Answer incoming calls, respond to questions & take action' },
+              { icon: '🔄', text: 'Handle full conversations end-to-end, 24/7' },
+              { icon: '🤖', text: 'No human agent needed — fully automated' },
+            ].map(({ icon, text }) => (
+              <div key={text} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                <span style={{ fontSize: 18, flexShrink: 0 }}>{icon}</span>
+                <span style={{ fontSize: 13.5, color: 'var(--text-2)', lineHeight: 1.5 }}>{text}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div
-          className="card product-card"
-          style={{ padding: '40px 36px', cursor: 'pointer', textAlign: 'left' }}
-          onClick={() => onNav('usecases')}
-        >
-          <div style={{ fontSize: 22, fontWeight: 700, marginBottom: 6 }}>Messaging Agent</div>
-          <div style={{ fontSize: 13, fontWeight: 600, color: 'rgba(110,160,255,0.85)', letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 18 }}>
-            Send &amp; Receive Messages
+        {/* Why KITALK */}
+        <div className="card" style={{ padding: '28px 32px', textAlign: 'left' }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(110,160,255,0.85)', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 18 }}>
+            Why KITALK
           </div>
-          <ul className="feat-list">
-            <li className="feat-item"><span className="feat-dot" />Send messages to follow up, notify customers, or broadcast promotions</li>
-            <li className="feat-item"><span className="feat-dot" />Receive messages, understand the request, and reply or take action instantly</li>
-            <li className="feat-item"><span className="feat-dot" />Manages every conversation automatically, 24/7, via WhatsApp</li>
-          </ul>
-          <div className="product-arrow">See use cases →</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+            {[
+              '💰 No Upfront Cost',
+              '📊 Pay As You Go',
+              '🔓 No Vendor Lock-In',
+              '⚡ Training Straight Away',
+              '❌ Cancel Anytime, No Questions Asked',
+            ].map((t) => (
+              <span key={t} style={{
+                padding: '8px 16px',
+                background: 'rgba(80,200,120,0.08)',
+                border: '1px solid rgba(80,200,120,0.18)',
+                borderRadius: 50,
+                fontSize: 13,
+                fontWeight: 600,
+                color: 'rgba(255,255,255,0.85)',
+              }}>{t}</span>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ marginTop: 28, cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'rgba(140,175,255,0.8)' }} onClick={() => onNav('usecases')}>
+          See use cases →
         </div>
       </div>
     </div>

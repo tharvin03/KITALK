@@ -41,7 +41,7 @@ export default function ContactSection({ onDemo }) {
 
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
           <button className="btn btn-solid" onClick={onDemo} style={{ width: '100%', justifyContent: 'center', padding: '14px 24px', borderRadius: 14 }}>
-            🎁 Book a Free Demo
+            Book a Free Demo
           </button>
           <span style={{ fontSize: 13, color: 'var(--text-2)' }}>
             3-day free trial included — no credit card required

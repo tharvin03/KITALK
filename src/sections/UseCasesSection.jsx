@@ -1,4 +1,3 @@
-/* ── SVG icon set — all use stroke="currentColor" so CSS color controls them ── */
 const Icons = {
   hospital: (
     <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -59,18 +58,15 @@ const Icons = {
   ),
 }
 
-const VOICE_CASES = [
-  { icon: Icons.hospital, title: 'Clinic & Hospital',    desc: 'Auto-confirm appointments, send reminders, handle rescheduling calls without staff.' },
-  { icon: Icons.cart,     title: 'E-commerce',           desc: 'Answer order status, delivery queries, and returns via outbound follow-up calls.' },
-  { icon: Icons.dollar,   title: 'Finance & Banking',    desc: 'Handle inbound loan enquiries, payment reminders, and KYC verification calls.' },
+const CASES = [
+  { icon: Icons.hospital, title: 'Clinic & Hospital',      desc: 'Auto-confirm appointments, send reminders, handle rescheduling calls without staff.' },
+  { icon: Icons.cart,     title: 'E-commerce',             desc: 'Answer order status, delivery queries, and returns via outbound follow-up calls.' },
+  { icon: Icons.dollar,   title: 'Finance & Banking',      desc: 'Handle inbound loan enquiries, payment reminders, and KYC verification calls.' },
   { icon: Icons.home,     title: 'Property & Real Estate', desc: 'Auto-qualify leads from ads, book viewings, and follow up prospects 24/7.' },
-]
-
-const MSG_CASES = [
-  { icon: Icons.mug,      title: 'F&B & Restaurants',   desc: 'Take table reservations, send order confirmations and delivery updates via messaging.' },
-  { icon: Icons.book,     title: 'Education',            desc: 'Send class schedules, fee reminders, results, and handle student enquiries automatically.' },
-  { icon: Icons.people,   title: 'HR & Recruitment',     desc: 'Screen candidates, schedule interviews, and keep applicants updated via messaging.' },
-  { icon: Icons.steering, title: 'Automotive',           desc: 'Send service reminders, booking confirmations, and follow-up on test drive leads.' },
+  { icon: Icons.mug,      title: 'F&B & Restaurants',      desc: 'Handle table reservations, order confirmations, and delivery update calls automatically.' },
+  { icon: Icons.book,     title: 'Education',              desc: 'Automate class schedule enquiries, fee reminders, and student follow-up calls.' },
+  { icon: Icons.people,   title: 'HR & Recruitment',       desc: 'Screen candidates via phone, schedule interviews, and keep applicants updated.' },
+  { icon: Icons.steering, title: 'Automotive',             desc: 'Service reminders, booking confirmations, and follow-up on test drive leads via voice.' },
 ]
 
 function CaseCard({ icon, title, desc }) {
@@ -99,17 +95,16 @@ export default function UseCasesSection() {
         <div className="tag">Use Cases</div>
         <div className="section-title">Built for every industry</div>
         <p className="section-sub">
-          If your business receives calls or messages, we can automate it.
+          If your business receives or makes calls, our voice agent can handle it.
         </p>
       </div>
 
       <div className="two-col">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {VOICE_CASES.map((c) => <CaseCard key={c.title} {...c} />)}
+          {CASES.slice(0, 4).map((c) => <CaseCard key={c.title} {...c} />)}
         </div>
-
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {MSG_CASES.map((c) => <CaseCard key={c.title} {...c} />)}
+          {CASES.slice(4).map((c) => <CaseCard key={c.title} {...c} />)}
         </div>
       </div>
     </div>

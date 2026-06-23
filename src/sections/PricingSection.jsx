@@ -36,7 +36,7 @@ export default function PricingSection({ onDemo }) {
           Book a Free Demo
         </button>
         <span style={{ fontSize: 13, color: 'var(--text-2)' }}>
-          Includes a 3-day free trial — no credit card required
+          🎁 Includes a 3-day free trial — no credit card required
         </span>
       </div>
     </div>

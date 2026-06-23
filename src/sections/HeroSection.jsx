@@ -38,7 +38,7 @@ export default function HeroSection({ onDemo }) {
             Book a Free Demo
           </button>
           <span style={{ fontSize: 13, color: 'var(--text-2)' }}>
-            Get a 3-day free trial — no credit card required
+            🎁 Get a 3-day free trial — no credit card required
           </span>
         </div>
       </div>

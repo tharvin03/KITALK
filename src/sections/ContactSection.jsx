@@ -44,7 +44,7 @@ export default function ContactSection({ onDemo }) {
             Book a Free Demo
           </button>
           <span style={{ fontSize: 13, color: 'var(--text-2)' }}>
-            3-day free trial included — no credit card required
+            🎁 3-day free trial included — no credit card required
           </span>
         </div>
       </div>

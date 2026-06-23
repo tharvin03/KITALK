@@ -15,10 +15,10 @@ export default function HeroSection({ onDemo }) {
         {/* Selling points */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginBottom: 36 }}>
           {[
-            '✅ No Upfront Cost',
-            '✅ Pay As You Go',
-            '✅ No Vendor Lock-In',
-            '✅ Cancel Anytime',
+            'No Upfront Cost',
+            'Pay As You Go',
+            'No Vendor Lock-In',
+            'Cancel Anytime',
           ].map((t) => (
             <span key={t} style={{
               padding: '6px 16px',
@@ -35,7 +35,7 @@ export default function HeroSection({ onDemo }) {
         {/* CTA */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
           <button className="btn btn-solid" onClick={onDemo} style={{ padding: '14px 32px', fontSize: 15 }}>
-            🎁 Book a Free Demo
+            Book a Free Demo
           </button>
           <span style={{ fontSize: 13, color: 'var(--text-2)' }}>
             Get a 3-day free trial — no credit card required

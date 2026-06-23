@@ -33,7 +33,7 @@ export default function PricingSection({ onDemo }) {
 
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
         <button className="btn btn-solid" onClick={onDemo} style={{ padding: '14px 32px', fontSize: 15 }}>
-          🎁 Book a Free Demo
+          Book a Free Demo
         </button>
         <span style={{ fontSize: 13, color: 'var(--text-2)' }}>
           Includes a 3-day free trial — no credit card required

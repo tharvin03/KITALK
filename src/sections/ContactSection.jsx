@@ -4,14 +4,14 @@ export default function ContactSection({ onDemo }) {
       <div className="tag">Contact</div>
       <div className="section-title" style={{ marginBottom: 8 }}>Never miss another lead</div>
       <p className="section-sub">
-        Reach out today — see how KITALK puts your customer conversations on autopilot, 24/7.
+        Reach out today — see how KITALK's voice agent puts your customer calls on autopilot, 24/7.
       </p>
 
       <div style={{ maxWidth: 560, margin: '0 auto' }}>
         <div className="card" style={{ padding: '30px 32px', textAlign: 'left', marginBottom: 16 }}>
           <div style={{ fontWeight: 700, fontSize: 17, marginBottom: 4 }}>KITALK Solution</div>
           <div style={{ fontSize: 13, color: 'var(--text-2)', marginBottom: 20 }}>
-            AI Voice &amp; Messaging Agent Provider
+            AI Voice Agent Provider
           </div>
 
           <div className="contact-row">
@@ -39,9 +39,14 @@ export default function ContactSection({ onDemo }) {
           </div>
         </div>
 
-        <button className="btn btn-solid" onClick={onDemo} style={{ width: '100%', justifyContent: 'center', padding: '14px 24px', borderRadius: 14 }}>
-          Book a Free Demo →
-        </button>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
+          <button className="btn btn-solid" onClick={onDemo} style={{ width: '100%', justifyContent: 'center', padding: '14px 24px', borderRadius: 14 }}>
+            🎁 Book a Free Demo
+          </button>
+          <span style={{ fontSize: 13, color: 'var(--text-2)' }}>
+            3-day free trial included — no credit card required
+          </span>
+        </div>
       </div>
     </div>
   )
